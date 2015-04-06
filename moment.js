@@ -1982,6 +1982,13 @@
                 d: input._days,
                 M: input._months
             };
+        } else if (typeof input === 'string' && !isNaN(input)){
+            duration = {};
+            if (key) {
+                duration[key] = parseInt(input)
+            } else {
+                duration.milliseconds = parseInt(input)
+            }
         } else if (typeof input === 'number') {
             duration = {};
             if (key) {
